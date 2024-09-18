@@ -4,17 +4,21 @@
 #include <sstream>
 
 struct STUDENT_DATA
+
 {
     std::string FirstNameOfStudent;
+
     std::string LastNameOfStudent;
 };
 
 int main()
+
 {
    
     std::ifstream file("C:\\Users\\jiyap\\source\\repos\\Assignment2ProV\\StudentData.txt");
 
     std::string line;
+
     std::vector<STUDENT_DATA> Students;
 
   
@@ -56,6 +60,17 @@ int main()
     {
         std::cout << "First Name: " << student.FirstNameOfStudent<< ", Last Name: " << student.LastNameOfStudent << std::endl;
     }
+
+#ifdef _DEBUG
+
+    std::cout << "DEBUG MODE: We are now printing student information..." << std::endl;
+
+    for (const auto& student : Students)
+    {
+        std::cout << "First Name: " << student.FirstNameOfStudent<< ", Last Name: " << student.LastNameOfStudent << std::endl;
+    }
+
+#endif
 
     return 0;
 }
